@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EletriFix - Fornecedor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>EletriFix - Sistema de Gerenciamento Interno</h1>
+    </header>
+
+    <main>
+        <section id="fornecedor">
+            <h2>Bem-vindo ao Sistema de Gerenciamento de Fornecedores</h2>
+            <p>Este sistema é destinado exclusivamente para uso interno da EletriFix. Aqui, nossos fornecedores podem gerenciar seus produtos, verificar pedidos e atualizar informações de contato.</p>
+
+            <h2>Funcionalidades Disponíveis</h2>
+            <ul>
+                <li>Cadastro e atualização de produtos fornecidos;</li>
+                <li>Visualização e gerenciamento de pedidos;</li>
+                <li>Atualização de informações de contato;</li>
+                <li>Relatórios de desempenho e entregas;</li>
+            </ul>
+
+            <h2>Adicionar Produtos:</h2>
+            <form>
+                <label for="nome-produto">Nome do Produto:</label><br>
+                <input type="text" id="nome-produto" name="nome-produto" required><br><br>
+                
+                <label for="descricao-produto">Descrição do Produto:</label><br>
+                <textarea id="descricao-produto" name="descricao-produto" required></textarea><br><br>
+                
+                <label for="preco-produto">Preço do Produto:</label><br>
+                <input type="number" id="preco-produto" name="preco-produto" step="0.01" required><br><br>
+                
+                <label for="quantidade-produto">Quantidade em Estoque:</label><br>
+                <input type="number" id="quantidade-produto" name="quantidade-produto" required><br><br>
+                
+                <input type="submit" value="Adicionar Produto">
+            </form>
+
+            <h2>Produtos Cadastrados:</h2>
+            <table id="produtos-table" border="1" style="width:100%; border-collapse:collapse">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="produtos-body">
+                    <!-- linhas serão inseridas via JS -->
+                </tbody>
+            </table>
+
+            <h2>Acesso Seguro</h2>
+            <p>Para garantir a segurança das informações, o acesso a este sistema é restrito aos fornecedores autorizados. Certifique-se de manter suas credenciais seguras e não compartilhá-las com terceiros.</p>
+        </section>
+    </main>
+
+    <footer>
+        <h4>Entre em contato:</h4>
+        <h5>(49) 8868-6515 ou @eletrifix66</h5>
+        <p>EletriFix &copy; 2026</p>
+    </footer>
+
+    <script src="front-end.js"></script>
+    
+    <script>
+        let senha = prompt("Digite a senha de acesso ao sistema de gerenciamento:")
+        function verifSenha(){
+            if (senha === "antonio123") {
+                return
+            } else {
+                alert("Senha incorreta! Acesso negado.")
+                window.location.href = "index.html"
+            }
+        }
+        verifSenha()  
+    </script>
+</body>
+</html>

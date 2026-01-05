@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EletriFix - Orçamento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="nav-btn">INÍCIO</a>
+            <a href="produtos.html" class="nav-btn">PRODUTOS</a>
+            <a href="servicos.html" class="nav-btn">SERVIÇOS</a>
+            <a href="sobre.html" class="nav-btn">SOBRE</a>
+            <a href="fornecedor.html" class="nav-btn">FORNECEDOR</a>
+        </nav>
+        <h1>EletriFix - Orçamento</h1>
+        <h2>Solicite seu orçamento personalizado</h2>
+    </header>
+
+    <main>
+        <form id="orcamento-form" style="max-width:600px;margin:0 auto;text-align:left">
+            <label>Nome Completo<br><input type="text" name="nome" required></label><br><br>
+            <label>E-mail<br><input type="email" name="email" required></label><br><br>
+            <label>Telefone<br><input type="tel" name="telefone" required></label><br><br>
+            <label>Serviço Desejado<br>
+                <select name="servico" required>
+                    <option value="">Selecione um serviço</option>
+                    <option value="instalacao_residencial">Instalação Elétrica Residencial</option>
+                    <option value="manutencao_sistemas">Manutenção de Sistemas Elétricos</option>
+                    <option value="instalacao_postes">Instalação de Postes</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </label><br><br>
+            <label>Detalhes Adicionais<br><textarea name="detalhes"
+                    placeholder="Descreva o que deseja de forma clara e precisa:" required></textarea>
+            </label><br><br>
+            <div class="localizacao">
+                <label>Endereço</label><br>
+                <label>Cidade<br><input type="text" name="cidade" required></label><br><br>
+                <label>Bairro<br><input type="text" name="bairro" required></label><br><br>
+                <label>Rua<br><input type="text" name="rua" required></label><br><br>
+                <label>Número<br><input type="text" name="numero" required></label><br><br>
+                <label>Complemento<br><input type="text" name="complemento"></label><br><br>
+            </div>
+            <button type="submit" class="nav-btn">Enviar Solicitação de Orçamento</button>
+        </form>
+    </main>
+
+    <footer>
+        <h4>Entre em contato:</h4>
+        <h5>(49) 8868-6515 ou <a href="https://www.instagram.com/eletrifix66/">@eletrifix66</a></h5>
+        <p>EletriFix &copy; 2026</p>
+    </footer>
+    <script src="front-end.js"></script>
+</body>
+
+</html>

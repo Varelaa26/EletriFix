@@ -1,0 +1,22 @@
+{
+  "name": "eletrifix",
+  "version": "1.0.0",
+  "description": "Landing Page & Web Store of Eletrifix",
+  "keywords": [
+    "Eletrifix",
+    "Eletrical"
+  ],
+  "license": "ISC",
+  "author": "Victor Gabriel",
+  "type": "module",
+  "main": "back-end.js, index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}

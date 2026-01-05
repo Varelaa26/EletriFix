@@ -1,0 +1,190 @@
+/* Configurações de Cores e Reset */
+:root {
+    --bg-escuro: #1a1a1a;
+    --laranja-pastel: #FFB347;
+    --laranja-hover: #e6a240;
+    --preto-puro: #272727;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* Define que todas as letras do site serão laranja por padrão */
+    color: var(--laranja-pastel);
+}
+
+body {
+    background-color: var(--bg-escuro);
+    line-height: 1.6;
+}
+
+/* Header e Navegação */
+header {
+    background-color: var(--preto-puro);
+    padding: 2.5rem 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--laranja-pastel);
+}
+
+header h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+header h2 {
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid var(--laranja-pastel);
+    border-radius: 0px; /* Estilo mais industrial/quadrado */
+    transition: all 0.3s ease;
+    background: transparent;
+    font-weight: bold;
+}
+
+.nav-btn:hover {
+    background-color: var(--laranja-pastel);
+    color: var(--bg-escuro); /* Letra inverte para ler no fundo laranja */
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h3, h2 {
+    color: var(--laranja-pastel);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+ul li {
+    padding: 12px;
+    border: 1px solid #3d3d3d;
+    margin-bottom: 10px;
+    background: rgba(0,0,0,0.2);
+}
+
+/* Formulários e Inputs (Escuros) */
+form {
+    background: var(--preto-puro);
+    padding: 40px;
+    border: 1px solid var(--laranja-pastel);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background-color: #333; /* Fundo do input levemente mais claro que o fundo geral */
+    border: 1px solid var(--laranja-pastel);
+    color: var(--laranja-pastel);
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 179, 71, 0.5);
+}
+
+button[type="submit"] {
+    background-color: transparent;
+    color: var(--laranja-pastel);
+    border: 2px solid var(--laranja-pastel);
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--laranja-pastel);
+    color: var(--bg-escuro);
+}
+
+/* Tabelas (Área do Fornecedor) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--preto-puro);
+}
+
+th {
+    border: 1px solid var(--laranja-pastel);
+    padding: 15px;
+    text-align: left;
+    background: var(--bg-escuro);
+}
+
+td {
+    border: 1px solid #3d3d3d;
+    padding: 12px;
+}
+
+/* Botões apenas texto (transparente) para ações como editar/remover/orçamento */
+button.edit,
+button.remove {
+    background: transparent;
+    border: none;
+    color: var(--laranja-pastel);
+    padding: 6px 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button.edit:hover,
+button.remove:hover {
+    color: var(--laranja-hover);
+    text-decoration: underline;
+}
+
+/* Botão "Faça seu orçamento" em servicos.html: alvo específico para sobrescrever o estilo inline */
+button[onclick="orçamento()"] {
+    background: transparent !important;
+    border: none !important;
+    color: var(--laranja-pastel) !important;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button[onclick="orçamento()"]:hover {
+    color: var(--laranja-hover) !important;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: var(--preto-puro);
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 2px solid var(--laranja-pastel);
+    margin-top: 100px;
+}
+
+footer a {
+    color: var(--laranja-pastel);
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .navbar { flex-direction: column; }
+}
