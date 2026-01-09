@@ -188,3 +188,29 @@ footer a {
 @media (max-width: 600px) {
     .navbar { flex-direction: column; }
 }
+
+/* Ajuste de Imagens para ficarem proporcionais */
+.img1 {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.img1 img {
+    max-width: 100%;    /* Não deixa a imagem estourar a tela */
+    height: auto;       /* Mantém a proporção */
+    max-height: 400px;  /* Limita a altura para não ocupar a tela toda */
+    border: 2px solid var(--laranja-pastel);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    object-fit: cover;  /* Garante que a imagem preencha o espaço sem achatar */
+}
+
+/* Correção de erro de sintaxe no Media Query anterior */
+@media (max-width: 600px) {
+    .navbar { 
+        flex-direction: column; 
+        align-items: stretch;
+    }
+    header h1 { font-size: 2rem; }
+}
