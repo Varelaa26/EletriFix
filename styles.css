@@ -1,0 +1,432 @@
+/* Configurações de Cores e Reset */
+:root {
+    --bg-escuro: #1a1a1a;
+    --laranja-pastel: #FFB347;
+    --laranja-hover: #e6a240;
+    --preto-puro: #272727;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* Define que todas as letras do site serão laranja por padrão */
+    color: var(--laranja-pastel);
+}
+
+body {
+    background-color: var(--bg-escuro);
+    line-height: 1.6;
+}
+
+/* Header e Navegação */
+header {
+    background-color: var(--preto-puro);
+    padding: 2.5rem 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--laranja-pastel);
+}
+
+header h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+header h2 {
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid var(--laranja-pastel);
+    border-radius: 0px; /* Estilo mais industrial/quadrado */
+    transition: all 0.3s ease;
+    background: transparent;
+    font-weight: bold;
+}
+
+.nav-btn:hover {
+    background-color: var(--laranja-pastel);
+    color: var(--bg-escuro); /* Letra inverte para ler no fundo laranja */
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h3, h2 {
+    color: var(--laranja-pastel);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+ul li {
+    padding: 12px;
+    border: 1px solid #3d3d3d;
+    margin-bottom: 10px;
+    background: rgba(0,0,0,0.2);
+}
+
+/* Formulários e Inputs (Escuros) */
+form {
+    background: var(--preto-puro);
+    padding: 40px;
+    border: 1px solid var(--laranja-pastel);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background-color: #333; /* Fundo do input levemente mais claro que o fundo geral */
+    border: 1px solid var(--laranja-pastel);
+    color: var(--laranja-pastel);
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 179, 71, 0.5);
+}
+
+button[type="submit"] {
+    background-color: transparent;
+    color: var(--laranja-pastel);
+    border: 2px solid var(--laranja-pastel);
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--laranja-pastel);
+    color: var(--bg-escuro);
+}
+
+/* Tabelas (Área do Fornecedor) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--preto-puro);
+}
+
+th {
+    border: 1px solid var(--laranja-pastel);
+    padding: 15px;
+    text-align: left;
+    background: var(--bg-escuro);
+}
+
+td {
+    border: 1px solid #3d3d3d;
+    padding: 12px;
+}
+
+/* Botões apenas texto (transparente) para ações como editar/remover/orçamento */
+button.edit,
+button.remove {
+    background: transparent;
+    border: none;
+    color: var(--laranja-pastel);
+    padding: 6px 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button.edit:hover,
+button.remove:hover {
+    color: var(--laranja-hover);
+    text-decoration: underline;
+}
+
+/* Botão "Faça seu orçamento" em servicos.html: alvo específico para sobrescrever o estilo inline */
+button[onclick="orçamento()"] {
+    background: transparent !important;
+    border: none !important;
+    color: var(--laranja-pastel) !important;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button[onclick="orçamento()"]:hover {
+    color: var(--laranja-hover) !important;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: var(--preto-puro);
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 2px solid var(--laranja-pastel);
+    margin-top: 100px;
+}
+
+footer a {
+    color: var(--laranja-pastel);
+    text-decoration: underline;
+}
+
+/* Ajuste de Imagens para ficarem proporcionais */
+.img1 {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.img1 img {
+    max-width: 100%;    /* Não deixa a imagem estourar a tela */
+    height: auto;       /* Mantém a proporção */
+    max-height: 400px;  /* Limita a altura para não ocupar a tela toda */
+    border: 2px solid var(--laranja-pastel);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    object-fit: cover;  /* Garante que a imagem preencha o espaço sem achatar */
+}
+
+/* Estilo para logo */
+.logo {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+/* Responsividade - Tablets (769px - 1024px) */
+@media (max-width: 1024px) {
+    header {
+        padding: 2rem 1rem;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+    }
+    
+    main {
+        padding: 15px;
+        margin: 30px auto;
+    }
+    
+    form {
+        padding: 30px;
+    }
+    
+    .navbar {
+        gap: 10px;
+    }
+    
+    .nav-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsividade - Tablets pequenos e celulares grandes (481px - 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 1.5rem 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    
+    header h2 {
+        font-size: 1rem;
+    }
+    
+    main {
+        padding: 15px;
+        margin: 20px auto;
+    }
+    
+    form {
+        padding: 25px 20px;
+    }
+    
+    .navbar {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .nav-btn {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+        flex: 1 1 auto;
+        min-width: calc(50% - 4px);
+    }
+    
+    h3, h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    input, textarea, select {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+    
+    button[type="submit"] {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    table {
+        font-size: 0.9rem;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+    }
+    
+    footer {
+        padding: 40px 15px;
+        margin-top: 60px;
+    }
+    
+    footer h4, footer h5 {
+        font-size: 1rem;
+    }
+    
+    .img1 img {
+        max-height: 300px;
+    }
+}
+
+/* Responsividade - Celulares (até 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 1rem 0.5rem;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+    
+    header h2 {
+        font-size: 0.9rem;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .nav-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.85rem;
+        text-align: center;
+    }
+    
+    main {
+        padding: 10px;
+        margin: 15px auto;
+    }
+    
+    form {
+        padding: 20px 15px;
+    }
+    
+    h3, h2 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+    
+    input, textarea, select {
+        padding: 10px;
+        font-size: 0.9rem;
+        margin-top: 6px;
+    }
+    
+    label {
+        font-size: 0.9rem;
+    }
+    
+    button[type="submit"] {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+    
+    ul li {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    /* Tabelas com scroll horizontal em telas pequenas */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 0.85rem;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    th, td {
+        padding: 8px 6px;
+        min-width: 80px;
+    }
+    
+    footer {
+        padding: 30px 10px;
+        margin-top: 40px;
+    }
+    
+    footer h4 {
+        font-size: 0.95rem;
+    }
+    
+    footer h5 {
+        font-size: 0.85rem;
+    }
+    
+    footer p {
+        font-size: 0.8rem;
+    }
+    
+    .img1 {
+        margin: 20px 0;
+    }
+    
+    .img1 img {
+        max-height: 250px;
+    }
+    
+    .logo {
+        max-width: 80%;
+    }
+    
+    /* Ajuste para mensagem de orçamento */
+    .mensagemCopy&Paste {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    #botaoCopiarOrçamento {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.85rem;
+        margin-top: 10px;
+    }
+}

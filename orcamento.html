@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>EletriFix - Orçamento</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo-aba.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="nav-btn">INÍCIO</a>
+        <a href="produtos.html" class="nav-btn">PRODUTOS</a>
+        <a href="servicos.html" class="nav-btn">SERVIÇOS</a>
+        <a href="sobre.html" class="nav-btn">SOBRE</a>
+        <a href="fornecedor.html" class="nav-btn">FORNECEDOR</a>
+    </nav>
+    <h1>EletriFix - Orçamento</h1>
+    <h2>Solicite seu orçamento personalizado</h2>
+</header>
+
+<main>
+    <form id="orcamento-form" onsubmit="enviar(event)" style="max-width:600px;margin:0 auto;text-align:left">
+
+        <label>Nome Completo<br>
+            <input type="text" name="nome" id="nome" required>
+        </label><br><br>
+
+        <label>Telefone<br>
+            <input type="tel" name="telefone" id="telefone" required>
+        </label><br><br>
+
+        <label>Serviço Desejado<br>
+            <select name="servico" id="servico" required>
+                <option value="">Selecione um serviço</option>
+                <option value="instalacao_residencial">Instalação Elétrica Residencial</option>
+                <option value="manutencao_sistemas">Manutenção de Sistemas Elétricos</option>
+                <option value="instalacao_postes">Instalação de Postes</option>
+                <option value="outro">Outro</option>
+            </select>
+        </label><br><br>
+
+        <label>Detalhes Adicionais<br>
+            <textarea name="detalhes" id="detalhes" required></textarea>
+        </label><br><br>
+
+        <h3>Endereço</h3>
+
+        <label>Cidade<br>
+            <input type="text" name="cidade" id="cidade" required>
+        </label><br><br>
+
+        <label>Bairro<br>
+            <input type="text" name="bairro" id="bairro" required>
+        </label><br><br>
+
+        <label>Rua<br>
+            <input type="text" name="rua" id="rua" required>
+        </label><br><br>
+
+        <label>Número<br>
+            <input type="text" name="numero" id="numero" required>
+        </label><br><br>
+
+        <label>Complemento<br>
+            <input type="text" name="complemento" id="complemento">
+        </label><br><br>
+
+        <button type="submit" class="nav-btn" onsubmit="enviar(event)">
+            Criar Solicitação de Orçamento
+        </button>
+    </form>
+
+</main>
+
+<footer>
+    <h4>Entre em contato:</h4>
+    <h5>+55 49 8868-6215 ou <a href="https://www.instagram.com/eletrifix66/">@eletrifix66</a></h5>
+    <p>EletriFix &copy; 2026</p>
+</footer>
+
+<script src="front-end.js"></script>
+
+<script>
+
+    function enviar(event) {
+        event.preventDefault()
+
+        const nome = document.getElementById("nome").value;
+        const telefone = document.getElementById("telefone").vaue;
+        const servico = document.getElementById("servico").value;
+        const detalhes = document.getElementById("detalhes").value;
+        const cidade = document.getElementById("cidade").value;
+        const bairro = document.getElementById("bairro").value;
+        const rua = document.getElementById("rua").value;
+        const numero = document.getElementById("numero").value;
+        const complemento = document.getElementById("complemento").value;
+
+
+        const txt = "Olá! Me chamo " + nome + ", meu telefone é: " + telefone + ". Gostaria de solicitar um orçamento para o seguinte serviço: " + servico + ". Detalhes adicionais: " + detalhes + ". Meu endereço é: Cidade: " + cidade + ", Bairro: " + bairro + ", Rua: " + rua + ", Número: " + numero + ", Complemento: " + complemento + "."
+        const texto = encodeURIComponent(txt)
+
+        const url = `https://whatsa.me/554988686215/?t=${texto}`
+
+        window.open(url, "_blank")
+
+        console.log(url)
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EletriFix - Fornecedor</title>
+    <link rel="shortcut icon" href="logo-aba.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>EletriFix - Sistema de Gerenciamento Interno</h1>
+</header>
+
+<main>
+    <section id="fornecedor">
+
+        <h2>Adicionar Produtos</h2>
+
+        <!-- FORMULÁRIO COM ID (ESSENCIAL) -->
+        <form id="produto-form">
+            <label>Nome do Produto:</label><br>
+            <input type="text" id="nome-produto" required><br><br>
+
+            <label>Descrição do Produto:</label><br>
+            <textarea id="descricao-produto" required></textarea><br><br>
+
+            <label>Preço:</label><br>
+            <input type="number" id="preco-produto" step="0.01" required><br><br>
+
+            <label>Quantidade:</label><br>
+            <input type="number" id="quantidade-produto" required><br><br>
+
+            <button type="submit">Adicionar Produto</button>
+        </form>
+
+        <h2>Produtos Cadastrados</h2>
+
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="produtos-body">
+                <!-- preenchido via JS -->
+            </tbody>
+        </table>
+
+    </section>
+</main>
+
+<footer>
+    <p>EletriFix &copy; 2026</p>
+</footer>
+
+<script src="front-end.js"></script>
+
+<script>
+    const senha = prompt("Digite a senha de acesso:");
+    if (senha !== "antonio123") {
+        alert("Senha incorreta!");
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>
